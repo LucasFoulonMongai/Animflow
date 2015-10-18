@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_items"
+            android:icon="@android:drawable/ic_menu_slideshow"
+            android:title="Flow Items" />
+        <item
+            android:id="@+id/nav_content"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="Flow Content 1" />
+        <item
+            android:id="@+id/nav_content_2"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="Flow Content 2" />
+    </group>
+
+</menu>

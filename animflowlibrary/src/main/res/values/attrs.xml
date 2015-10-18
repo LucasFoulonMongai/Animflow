@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="AnimatedFontTextView">
+        <attr name="ttfNameTextView" format="string" />
+        <attr name="ttfNameTextViewSelected" format="string" />
+        <attr name="letterSpacing" format="float" />
+        <attr name="shadowRadius" format="dimension" />
+        <attr name="shadowDx" format="dimension" />
+        <attr name="shadowDy" format="dimension" />
+        <attr name="shadowColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="AnimatedView">
+        <attr name="fromAlpha" format="float" />
+        <attr name="fromX" format="dimension" />
+        <attr name="fromY" format="dimension" />
+        <attr name="fromZoom" format="float" />
+        <attr name="fromRotation" format="float" />
+        <attr name="delayStart" format="float" />
+        <attr name="delayEnd" format="float" />
+        <attr name="ease" format="string" />
+        <attr name="isFromTop" format="boolean" />
+    </declare-styleable>
+</resources>
