@@ -30,16 +30,16 @@ dependencies {
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'rvgenadapter'
+    bintrayName = 'animflow'
 
     publishedGroupId = 'com.lfm.animflowlibrary'
-    libraryName = 'RVGenericAdapter'
+    libraryName = 'Animflow'
     artifact = 'animflow'
 
-    libraryDescription = 'A Generic Adapter for Recycler View in Android'
+    libraryDescription = 'Offers a set of View that animate themselves by using their XML configuration on Android'
 
-    siteUrl = 'https://github.com/LucasFoulonMongai/RecyclerViewGenericAdapterSample'
-    gitUrl = 'https://github.com/LucasFoulonMongai/RecyclerViewGenericAdapterSample.git'
+    siteUrl = 'https://github.com/LucasFoulonMongai/Animflow'
+    gitUrl = 'https://github.com/LucasFoulonMongai/Animflow.git'
 
     libraryVersion = '1.0.0'
 
