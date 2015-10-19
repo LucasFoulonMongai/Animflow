@@ -24,7 +24,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/fullscreen"
                 android:translationY="300dp"
-                app:delayEnd="2.0"
+                app:delayEnd="2.6"
                 app:ease="linear"
                 app:fromY="-300dp"
                 app:isFromTop="true" />

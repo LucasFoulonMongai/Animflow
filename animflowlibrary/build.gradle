@@ -30,7 +30,7 @@ dependencies {
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'animflow'
+    bintrayName = 'Animflow'
 
     publishedGroupId = 'com.lfm.animflowlibrary'
     libraryName = 'Animflow'
