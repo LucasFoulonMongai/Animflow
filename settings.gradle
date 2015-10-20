@@ -1,1 +1,1 @@
-include ':app', ':animflowlibrary'
+include ':app', ':animflow'

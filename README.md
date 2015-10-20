@@ -26,7 +26,7 @@ include this library through build.gradle using theses lines :
       maven { url 'https://dl.bintray.com/lucasfm/maven/' }
     }
     dependencies {
-    compile 'com.lfm.animflowlibrary:animflow:1.0.0'
+    compile 'com.lfm.animflow:animflow:1.0.0'
     }
 
 The main concept is that you only have to create the final xml view you want to display, then you had your animation. This library allow you to add animations at the end of you design integration as a an added value.
@@ -64,34 +64,34 @@ How to use it:
  
   1) use this custom RecyclerView :
 
-    <com.lfm.animflowlibrary.containers.AnimContentRecyclerViewVertical xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.lfm.animflow.containers.AnimContentRecyclerViewVertical xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/itemsRecyclerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent" />
 
 2) Use item View implementing AnimatedView (every view that has to be animated need to have a parent view of this type)
 
-    <com.lfm.animflowlibrary.classics.AnimatedRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.lfm.animflow.classics.AnimatedRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:fromX="-80dp">
-        <com.lfm.animflowlibrary.classics.AnimatedImageView
+        <com.lfm.animflow.classics.AnimatedImageView
             android:id="@+id/itemImage"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/imgres" />
-    </com.lfm.animflowlibrary.classics.AnimatedRelativeLayout>
+    </com.lfm.animflow.classics.AnimatedRelativeLayout>
 
 II/ ScrollView
     See : https://github.com/LucasFoulonMongai/Animflow/blob/master/app/src/main/res/layout/fragment_content_bis
 
-    <com.lfm.animflowlibrary.containers.AnimContentScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.lfm.animflow.containers.AnimContentScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/contentScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-          <com.lfm.animflowlibrary.classics.AnimatedLinearLayout
+          <com.lfm.animflow.classics.AnimatedLinearLayout
           android:id="@+id/contentContainerLayout"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
@@ -99,7 +99,7 @@ II/ ScrollView
           
               <!-- AnimatedView goes here -->
               
-          </com.lfm.animflowlibrary.classics.AnimatedLinearLayout>
-    </com.lfm.animflowlibrary.containers.AnimContentScrollView>
+          </com.lfm.animflow.classics.AnimatedLinearLayout>
+    </com.lfm.animflow.containers.AnimContentScrollView>
 
 

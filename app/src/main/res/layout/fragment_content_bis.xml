@@ -89,7 +89,7 @@
                 android:padding="10dp"
                 android:src="@drawable/imgres"
                 app:fromAlpha="0.0" />
-        </com.lfm.animflowlibrary.classics.AnimatedLinearLayout>
+        </com.lfm.animflow.classics.AnimatedLinearLayout>
     </com.lfm.animflow.classics.AnimatedLinearLayout>
 
 </com.lfm.animflow.containers.AnimContentScrollView>

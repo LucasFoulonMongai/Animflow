@@ -25,7 +25,7 @@
                 app:ease="linear"
                 app:fromY="-200dp" />
 
-        </com.lfm.animflowlibrary.classics.AnimatedFrameLayout>
+        </com.lfm.animflow.classics.AnimatedFrameLayout>
 
         <com.lfm.animflow.classics.AnimatedTextView
             android:layout_width="match_parent"
@@ -114,7 +114,7 @@
                 android:paddingRight="10dp"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales pulvinar diam, ut ultrices libero egestas vel. Fusce quis luctus est. Fusce dapibus dignissim libero sit amet dapibus. Cras porttitor mollis purus in vehicula."
                 app:fromAlpha="0" />
-        </com.lfm.animflowlibrary.classics.AnimatedLinearLayout>
+        </com.lfm.animflow.classics.AnimatedLinearLayout>
 
 
         <com.lfm.animflow.classics.AnimatedFrameLayout
@@ -167,7 +167,7 @@
                 app:delayEnd="2.0"
                 app:delayStart="0.2"
                 app:fromAlpha="0.0" />
-        </com.lfm.animflowlibrary.classics.AnimatedLinearLayout>
+        </com.lfm.animflow.classics.AnimatedLinearLayout>
 
         <com.lfm.animflow.classics.AnimatedTextView
             android:layout_width="match_parent"
@@ -201,7 +201,7 @@
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales pulvinar diam, ut ultrices libero egestas vel. Fusce quis luctus est. Fusce dapibus dignissim libero sit amet dapibus. Cras porttitor mollis purus in vehicula."
                 app:ease="cubic"
                 app:fromAlpha="0" />
-        </com.lfm.animflowlibrary.classics.AnimatedLinearLayout>
+        </com.lfm.animflow.classics.AnimatedLinearLayout>
 
 
         <com.lfm.animflow.classics.AnimatedTextView
@@ -235,7 +235,7 @@
                 android:src="@drawable/imgres"
                 app:ease="cubic"
                 app:fromAlpha="0.0" />
-        </com.lfm.animflowlibrary.classics.AnimatedLinearLayout>
+        </com.lfm.animflow.classics.AnimatedLinearLayout>
     </com.lfm.animflow.classics.AnimatedLinearLayout>
 
 </com.lfm.animflow.containers.AnimContentScrollView>
