@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.lfm.animflowlibrary.classics.AnimatedCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.lfm.animflow.classics.AnimatedCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -16,17 +16,17 @@
     app:fromAlpha="0.0"
     app:fromX="-80dp">
 
-    <com.lfm.animflowlibrary.classics.AnimatedRelativeLayout
+    <com.lfm.animflow.classics.AnimatedRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.lfm.animflowlibrary.classics.AnimatedImageView
+        <com.lfm.animflow.classics.AnimatedImageView
             android:id="@+id/itemImage"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/imgres" />
 
-        <com.lfm.animflowlibrary.classics.AnimatedTextView
+        <com.lfm.animflow.classics.AnimatedTextView
             android:id="@+id/itemTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             android:textSize="22sp" />
 
 
-        <com.lfm.animflowlibrary.classics.AnimatedTextView
+        <com.lfm.animflow.classics.AnimatedTextView
             android:id="@+id/itemDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,5 +51,5 @@
             android:layout_toRightOf="@+id/itemImage"
             android:textSize="18sp" />
 
-    </com.lfm.animflowlibrary.classics.AnimatedRelativeLayout>
-</com.lfm.animflowlibrary.classics.AnimatedCardView>
+    </com.lfm.animflow.classics.AnimatedRelativeLayout>
+</com.lfm.animflow.classics.AnimatedCardView>

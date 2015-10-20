@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.lfm.animflowlibrary.classics.AnimatedVoidView
+    <com.lfm.animflow.classics.AnimatedVoidView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:fromX="-100dp">
 
-    </com.lfm.animflowlibrary.classics.AnimatedVoidView>
+    </com.lfm.animflow.classics.AnimatedVoidView>
 </LinearLayout>

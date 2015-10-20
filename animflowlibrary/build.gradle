@@ -32,7 +32,7 @@ ext {
     bintrayRepo = 'maven'
     bintrayName = 'Animflow'
 
-    publishedGroupId = 'com.lfm.animflowlibrary'
+    publishedGroupId = 'com.lfm.animflow'
     libraryName = 'Animflow'
     artifact = 'animflow'
 

@@ -1,4 +1,4 @@
-package com.lfm.animflow;
+package com.lfm.animflowsample;
 
 import org.junit.Test;
 

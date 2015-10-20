@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.lfm.animflowlibrary.containers.AnimContentScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.lfm.animflow.containers.AnimContentScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/contentScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.lfm.animflowlibrary.classics.AnimatedLinearLayout
+    <com.lfm.animflow.classics.AnimatedLinearLayout
         android:id="@+id/contentContainerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.lfm.animflowlibrary.classics.AnimatedFrameLayout
+        <com.lfm.animflow.classics.AnimatedFrameLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:clipChildren="true"
             android:clipToPadding="true">
 
-            <com.lfm.animflowlibrary.classics.AnimatedImageView
+            <com.lfm.animflow.classics.AnimatedImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
@@ -27,51 +27,51 @@
 
         </com.lfm.animflowlibrary.classics.AnimatedFrameLayout>
 
-        <com.lfm.animflowlibrary.classics.AnimatedTextView
+        <com.lfm.animflow.classics.AnimatedTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales pulvinar diam, ut ultrices libero egestas vel. Fusce quis luctus est. Fusce dapibus dignissim libero sit amet dapibus. Cras porttitor mollis purus in vehicula. Duis massa dui, viverra id accumsan nec, rutrum ut magna. Nulla ut mattis sapien. Nunc id mauris eu sem fringilla ultrices vel eget purus. Nullam luctus euismod est, sit amet viverra purus."
             app:fromX="200dp" />
 
-        <com.lfm.animflowlibrary.classics.AnimatedLinearLayout
+        <com.lfm.animflow.classics.AnimatedLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <com.lfm.animflowlibrary.classics.AnimatedImageView
+            <com.lfm.animflow.classics.AnimatedImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:src="@drawable/imgres"
                 app:fromX="-200dp" />
 
-            <com.lfm.animflowlibrary.classics.AnimatedTextView
+            <com.lfm.animflow.classics.AnimatedTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingRight="10dp"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales pulvinar diam, ut ultrices libero egestas vel. Fusce quis luctus est. Fusce dapibus dignissim libero sit amet dapibus. Cras porttitor mollis purus in vehicula."
                 app:fromAlpha="0" />
-        </com.lfm.animflowlibrary.classics.AnimatedLinearLayout>
+        </com.lfm.animflow.classics.AnimatedLinearLayout>
 
 
-        <com.lfm.animflowlibrary.classics.AnimatedTextView
+        <com.lfm.animflow.classics.AnimatedTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales pulvinar diam, ut ultrices libero egestas vel. Fusce quis luctus est. Fusce dapibus dignissim libero sit amet dapibus. Cras porttitor mollis purus in vehicula. Duis massa dui, viverra id accumsan nec, rutrum ut magna. Nulla ut mattis sapien. Nunc id mauris eu sem fringilla ultrices vel eget purus. Nullam luctus euismod est, sit amet viverra purus."
             app:fromX="-200dp" />
 
-        <com.lfm.animflowlibrary.classics.AnimatedLinearLayout
+        <com.lfm.animflow.classics.AnimatedLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <com.lfm.animflowlibrary.classics.AnimatedTextView
+            <com.lfm.animflow.classics.AnimatedTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -79,36 +79,36 @@
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales pulvinar diam, ut ultrices libero egestas vel. Fusce quis luctus est. Fusce dapibus dignissim libero sit amet dapibus. Cras porttitor mollis purus in vehicula."
                 app:fromX="-200dp" />
 
-            <com.lfm.animflowlibrary.classics.AnimatedImageView
+            <com.lfm.animflow.classics.AnimatedImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:src="@drawable/imgres"
                 app:fromAlpha="0.0" />
-        </com.lfm.animflowlibrary.classics.AnimatedLinearLayout>
+        </com.lfm.animflow.classics.AnimatedLinearLayout>
 
-        <com.lfm.animflowlibrary.classics.AnimatedTextView
+        <com.lfm.animflow.classics.AnimatedTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales pulvinar diam, ut ultrices libero egestas vel. Fusce quis luctus est. Fusce dapibus dignissim libero sit amet dapibus. Cras porttitor mollis purus in vehicula. Duis massa dui, viverra id accumsan nec, rutrum ut magna. Nulla ut mattis sapien. Nunc id mauris eu sem fringilla ultrices vel eget purus. Nullam luctus euismod est, sit amet viverra purus."
             app:fromX="200dp" />
 
-        <com.lfm.animflowlibrary.classics.AnimatedLinearLayout
+        <com.lfm.animflow.classics.AnimatedLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <com.lfm.animflowlibrary.classics.AnimatedImageView
+            <com.lfm.animflow.classics.AnimatedImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:src="@drawable/imgres"
                 app:fromX="-200dp" />
 
-            <com.lfm.animflowlibrary.classics.AnimatedTextView
+            <com.lfm.animflow.classics.AnimatedTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingRight="10dp"
@@ -117,13 +117,13 @@
         </com.lfm.animflowlibrary.classics.AnimatedLinearLayout>
 
 
-        <com.lfm.animflowlibrary.classics.AnimatedFrameLayout
+        <com.lfm.animflow.classics.AnimatedFrameLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:clipChildren="true"
             android:clipToPadding="true">
 
-            <com.lfm.animflowlibrary.classics.AnimatedImageView
+            <com.lfm.animflow.classics.AnimatedImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
@@ -131,9 +131,9 @@
                 app:ease="linear"
                 app:fromY="-200dp" />
 
-        </com.lfm.animflowlibrary.classics.AnimatedFrameLayout>
+        </com.lfm.animflow.classics.AnimatedFrameLayout>
 
-        <com.lfm.animflowlibrary.classics.AnimatedTextView
+        <com.lfm.animflow.classics.AnimatedTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -142,14 +142,14 @@
             app:delayStart="0.2"
             app:fromX="-200dp" />
 
-        <com.lfm.animflowlibrary.classics.AnimatedLinearLayout
+        <com.lfm.animflow.classics.AnimatedLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <com.lfm.animflowlibrary.classics.AnimatedTextView
+            <com.lfm.animflow.classics.AnimatedTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -159,7 +159,7 @@
                 app:delayStart="0.2"
                 app:fromX="-200dp" />
 
-            <com.lfm.animflowlibrary.classics.AnimatedImageView
+            <com.lfm.animflow.classics.AnimatedImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
@@ -169,7 +169,7 @@
                 app:fromAlpha="0.0" />
         </com.lfm.animflowlibrary.classics.AnimatedLinearLayout>
 
-        <com.lfm.animflowlibrary.classics.AnimatedTextView
+        <com.lfm.animflow.classics.AnimatedTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
@@ -179,14 +179,14 @@
             app:ease="cubic"
             app:fromX="200dp" />
 
-        <com.lfm.animflowlibrary.classics.AnimatedLinearLayout
+        <com.lfm.animflow.classics.AnimatedLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <com.lfm.animflowlibrary.classics.AnimatedImageView
+            <com.lfm.animflow.classics.AnimatedImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
@@ -194,7 +194,7 @@
                 app:ease="cubic"
                 app:fromX="-200dp" />
 
-            <com.lfm.animflowlibrary.classics.AnimatedTextView
+            <com.lfm.animflow.classics.AnimatedTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingRight="10dp"
@@ -204,7 +204,7 @@
         </com.lfm.animflowlibrary.classics.AnimatedLinearLayout>
 
 
-        <com.lfm.animflowlibrary.classics.AnimatedTextView
+        <com.lfm.animflow.classics.AnimatedTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -212,14 +212,14 @@
             app:ease="cubic"
             app:fromX="-200dp" />
 
-        <com.lfm.animflowlibrary.classics.AnimatedLinearLayout
+        <com.lfm.animflow.classics.AnimatedLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <com.lfm.animflowlibrary.classics.AnimatedTextView
+            <com.lfm.animflow.classics.AnimatedTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -228,7 +228,7 @@
                 app:ease="cubic"
                 app:fromX="-200dp" />
 
-            <com.lfm.animflowlibrary.classics.AnimatedImageView
+            <com.lfm.animflow.classics.AnimatedImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
@@ -236,6 +236,6 @@
                 app:ease="cubic"
                 app:fromAlpha="0.0" />
         </com.lfm.animflowlibrary.classics.AnimatedLinearLayout>
-    </com.lfm.animflowlibrary.classics.AnimatedLinearLayout>
+    </com.lfm.animflow.classics.AnimatedLinearLayout>
 
-</com.lfm.animflowlibrary.containers.AnimContentScrollView>
+</com.lfm.animflow.containers.AnimContentScrollView>
