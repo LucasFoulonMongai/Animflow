@@ -16,7 +16,7 @@ See the example to better understand the type of animations :
   
   -ScrollView with content : http://giant.gfycat.com/HideousOilyAnchovy.gif (or http://gfycat.com/HideousOilyAnchovy )
   
-  -Parralax with a ScrollView : http://giant.gfycat.com/YellowCommonKangaroo.gif (or http://gfycat.com/YellowCommonKangaroo )
+  -Parralax with a ScrollView : http://giant.gfycat.com/PhysicalPreciousIntermediateegret.gif (or http://gfycat.com/PhysicalPreciousIntermediateegret )
 
 
 include this library through build.gradle using theses lines :
