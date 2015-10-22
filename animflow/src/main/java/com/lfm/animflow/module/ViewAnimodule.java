@@ -26,8 +26,6 @@ public class ViewAnimodule {
     public final static int ANIMATING_STATE_PENDING = 1;
     public final static int ANIMATING_STATE_RUNNING = 2;
 
-
-    private Context context;
     private View viewToAnimate;
 
     private boolean isFromTop;
@@ -88,16 +86,15 @@ public class ViewAnimodule {
         }
     };
 
-    public ViewAnimodule(View viewToAnimate, Context context) {
-        this(viewToAnimate, context, null);
+    public ViewAnimodule(View viewToAnimate) {
+        this(viewToAnimate, null);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public ViewAnimodule(View viewToAnimate, Context context, AttributeSet attrs) {
+    public ViewAnimodule(View viewToAnimate,AttributeSet attrs) {
         this.viewToAnimate = viewToAnimate;
-        this.context = context;
         if (attrs != null) {
-            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.AnimatedView, 0, 0);
+            TypedArray a = viewToAnimate.getContext().obtainStyledAttributes(attrs, R.styleable.AnimatedView, 0, 0);
             fromAlpha = a.getFloat(R.styleable.AnimatedView_fromAlpha, finalAlpha);
             fromX = a.getDimension(R.styleable.AnimatedView_fromX, 0.0f);
             fromY = a.getDimension(R.styleable.AnimatedView_fromY, 0.0f);

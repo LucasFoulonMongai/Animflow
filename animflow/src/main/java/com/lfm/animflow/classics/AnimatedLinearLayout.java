@@ -18,19 +18,19 @@ public class AnimatedLinearLayout extends LinearLayout implements AnimatedView {
 
     public AnimatedLinearLayout(Context context) {
         super(context);
-        viewAnimodule = new ViewAnimodule(this, context);
+        viewAnimodule = new ViewAnimodule(this);
     }
 
     public AnimatedLinearLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
-        viewAnimodule = new ViewAnimodule(this, context, attrs);
+        viewAnimodule = new ViewAnimodule(this, attrs);
     }
 
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public AnimatedLinearLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        viewAnimodule = new ViewAnimodule(this, context, attrs);
+        viewAnimodule = new ViewAnimodule(this, attrs);
     }
 
     @Override

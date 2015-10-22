@@ -16,17 +16,17 @@ public class AnimatedImageView extends ImageView implements AnimatedView {
 
     public AnimatedImageView(Context context) {
         super(context);
-        viewAnimodule = new ViewAnimodule(this, context);
+        viewAnimodule = new ViewAnimodule(this);
     }
 
     public AnimatedImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        viewAnimodule = new ViewAnimodule(this, context, attrs);
+        viewAnimodule = new ViewAnimodule(this, attrs);
     }
 
     public AnimatedImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        viewAnimodule = new ViewAnimodule(this, context, attrs);
+        viewAnimodule = new ViewAnimodule(this, attrs);
     }
 
     @Override

@@ -16,17 +16,17 @@ public class AnimatedRelativeLayout extends RelativeLayout implements AnimatedVi
 
     public AnimatedRelativeLayout(Context context) {
         super(context);
-        viewAnimodule = new ViewAnimodule(this, context);
+        viewAnimodule = new ViewAnimodule(this);
     }
 
     public AnimatedRelativeLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
-        viewAnimodule = new ViewAnimodule(this, context, attrs);
+        viewAnimodule = new ViewAnimodule(this, attrs);
     }
 
     public AnimatedRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        viewAnimodule = new ViewAnimodule(this, context, attrs);
+        viewAnimodule = new ViewAnimodule(this, attrs);
     }
 
     @Override

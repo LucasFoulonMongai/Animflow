@@ -16,17 +16,17 @@ public class AnimatedCardView extends CardView implements AnimatedView {
 
     public AnimatedCardView(Context context) {
         super(context);
-        viewAnimodule = new ViewAnimodule(this, context);
+        viewAnimodule = new ViewAnimodule(this);
     }
 
     public AnimatedCardView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        viewAnimodule = new ViewAnimodule(this, context, attrs);
+        viewAnimodule = new ViewAnimodule(this, attrs);
     }
 
     public AnimatedCardView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        viewAnimodule = new ViewAnimodule(this, context, attrs);
+        viewAnimodule = new ViewAnimodule(this, attrs);
     }
 
     @Override

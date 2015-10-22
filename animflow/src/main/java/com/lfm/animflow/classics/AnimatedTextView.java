@@ -16,17 +16,17 @@ public class AnimatedTextView extends TextView implements AnimatedView {
 
     public AnimatedTextView(Context context) {
         super(context);
-        viewAnimodule = new ViewAnimodule(this, context);
+        viewAnimodule = new ViewAnimodule(this);
     }
 
     public AnimatedTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        viewAnimodule = new ViewAnimodule(this, context, attrs);
+        viewAnimodule = new ViewAnimodule(this, attrs);
     }
 
     public AnimatedTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        viewAnimodule = new ViewAnimodule(this, context, attrs);
+        viewAnimodule = new ViewAnimodule(this, attrs);
     }
 
     @Override
