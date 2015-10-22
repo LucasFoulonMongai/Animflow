@@ -27,7 +27,7 @@ include this library through build.gradle using theses lines :
     }
     dependencies {
       ...
-      compile 'com.lfm.animflow:animflow:1.0.1'
+      compile 'com.lfm.animflow:animflow:1.0.5'
     }
 
 The main concept is that you only have to create the final xml view you want to display, then you had your animation. This library allow you to add animations at the end of you design integration as a an added value.
