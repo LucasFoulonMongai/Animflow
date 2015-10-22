@@ -33,4 +33,9 @@ public class AnimatedCardView extends CardView implements AnimatedView {
     public ViewAnimodule getViewAnimodule() {
         return viewAnimodule;
     }
+
+    @Override
+    public void customAnimation(float animationFactor) {
+
+    }
 }

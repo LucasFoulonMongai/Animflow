@@ -1,7 +1,6 @@
 package com.lfm.animflow.module;
 
 import android.annotation.TargetApi;
-import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.util.AttributeSet;
@@ -27,6 +26,7 @@ public class ViewAnimodule {
     public final static int ANIMATING_STATE_RUNNING = 2;
 
     private View viewToAnimate;
+    private AnimatedView viewToAnimateImp;
 
     private boolean isFromTop;
     private boolean isAnimated = false;
@@ -91,8 +91,11 @@ public class ViewAnimodule {
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public ViewAnimodule(View viewToAnimate,AttributeSet attrs) {
+    public ViewAnimodule(View viewToAnimate, AttributeSet attrs) {
         this.viewToAnimate = viewToAnimate;
+        if (viewToAnimate instanceof AnimatedView) {
+            viewToAnimateImp = (AnimatedView) viewToAnimate;
+        }
         if (attrs != null) {
             TypedArray a = viewToAnimate.getContext().obtainStyledAttributes(attrs, R.styleable.AnimatedView, 0, 0);
             fromAlpha = a.getFloat(R.styleable.AnimatedView_fromAlpha, finalAlpha);
@@ -144,30 +147,8 @@ public class ViewAnimodule {
         finalZoom = viewToAnimate.getScaleX();
         finalRotation = viewToAnimate.getRotation();
         checkIsAnimated();
-        if (!isAnimated) {
-            return;
-        }
-        if (finalAlpha != fromAlpha) {
-            viewToAnimate.setAlpha((finalAlpha - fromAlpha) * animateFactor + fromAlpha);
-        }
 
-        if (0f != fromX) {
-            viewToAnimate.setRight((int) (finalX + fromX - fromX * animateFactor) + viewToAnimate.getWidth());
-            viewToAnimate.setLeft((int) (finalX + fromX - fromX * animateFactor));
-        }
-
-        if (0f != fromY) {
-            viewToAnimate.setTop((int) (finalY + fromY - fromY * animateFactor));
-        }
-
-        if ((finalZoom - 1f) != fromZoom) {
-            viewToAnimate.setScaleX(finalZoom + fromZoom - fromZoom * animateFactor);
-            viewToAnimate.setScaleY(finalZoom + fromZoom - fromZoom * animateFactor);
-        }
-
-        if (finalRotation != fromRotation) {
-            viewToAnimate.setRotation(finalRotation + fromRotation - fromRotation * animateFactor);
-        }
+        animateInternal();
 
         if (animatingState == ANIMATING_STATE_PENDING) {
             launchAnimation();
@@ -204,10 +185,6 @@ public class ViewAnimodule {
     }
 
     private synchronized void launchAnimation() {
-        if (!isAnimated) {
-            animatingState = ANIMATING_STATE_IDLE;
-            return;
-        }
         if (!isInited) {
             animatingState = ANIMATING_STATE_PENDING;
             return;
@@ -250,6 +227,9 @@ public class ViewAnimodule {
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void animateInternal() {
+        if (viewToAnimateImp != null) {
+            viewToAnimateImp.customAnimation(animateFactor);
+        }
         if (!isAnimated || Build.VERSION.SDK_INT < 11) {
             return;
         }

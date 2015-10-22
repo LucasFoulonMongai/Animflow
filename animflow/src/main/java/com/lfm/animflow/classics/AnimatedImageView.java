@@ -33,4 +33,9 @@ public class AnimatedImageView extends ImageView implements AnimatedView {
     public ViewAnimodule getViewAnimodule() {
         return viewAnimodule;
     }
+
+    @Override
+    public void customAnimation(float animationFactor) {
+
+    }
 }
