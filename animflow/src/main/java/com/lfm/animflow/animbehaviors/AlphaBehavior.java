@@ -9,12 +9,10 @@ import android.view.View;
  */
 public class AlphaBehavior implements AnimBehavior {
     private float fromAlpha = 0f;
-    private float finalAlpha = 0f;
+    private float finalAlpha = -1f;
 
     public AlphaBehavior(float fromAlpha) {
         this.fromAlpha = fromAlpha;
-        this.finalAlpha = fromAlpha;
-
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -26,7 +24,7 @@ public class AlphaBehavior implements AnimBehavior {
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public void animate(View viewToAnimate, float animateFactor) {
-        if (fromAlpha == finalAlpha) {
+        if (fromAlpha == finalAlpha || finalAlpha != -1 ) {
             return;
         }
         viewToAnimate.setAlpha((finalAlpha - fromAlpha) * animateFactor + fromAlpha);
