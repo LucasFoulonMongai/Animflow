@@ -8,6 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lfm.animflow.R;
+import com.lfm.animflow.animbehaviors.AnimBehavior;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Lucas FOULON-MONGAÏ, github.com/LucasFoulonMongai  on 17/10/15.
@@ -26,33 +30,18 @@ public class ViewAnimodule {
     public final static int ANIMATING_STATE_RUNNING = 2;
 
     private View viewToAnimate;
-    private AnimatedView viewToAnimateImp;
 
     private boolean isFromTop;
-    private boolean isAnimated = false;
     private boolean isInited = false;
     private float animateFactor = 0f;
     private float finalAnimateFactor = 0f;
-    private float finalX = 0f;
-    private float fromX = 0f;
-
-    private float finalY = 0f;
-    private float fromY = 0f;
-
-    private float finalAlpha = 1.0f;
-    private float fromAlpha = 0f;
-
-    private float finalZoom = 1.0f;
-    private float fromZoom = 0f;
 
     private float delayStart = 0f;
     private float delayEnd = 1.0f;
 
-    private float finalRotation = 0f;
-    private float fromRotation = 0f;
-
     private int ease = EASE_CUBIC;
     private int animatingState = ANIMATING_STATE_IDLE;
+    private List<AnimBehavior> animBehaviorList;
 
     private Runnable callbackViewRunnable = new Runnable() {
         @Override
@@ -93,20 +82,15 @@ public class ViewAnimodule {
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public ViewAnimodule(View viewToAnimate, AttributeSet attrs) {
         this.viewToAnimate = viewToAnimate;
-        if (viewToAnimate instanceof AnimatedView) {
-            viewToAnimateImp = (AnimatedView) viewToAnimate;
-        }
+        this.animBehaviorList = new ArrayList<>();
         if (attrs != null) {
             TypedArray a = viewToAnimate.getContext().obtainStyledAttributes(attrs, R.styleable.AnimatedView, 0, 0);
-            fromAlpha = a.getFloat(R.styleable.AnimatedView_fromAlpha, finalAlpha);
-            fromX = a.getDimension(R.styleable.AnimatedView_fromX, 0.0f);
-            fromY = a.getDimension(R.styleable.AnimatedView_fromY, 0.0f);
-            fromZoom = a.getFloat(R.styleable.AnimatedView_fromZoom, finalZoom) - 1.0f;
-            fromRotation = a.getFloat(R.styleable.AnimatedView_fromRotation, finalRotation);
+            AnimBehaviorBuilder.build(animBehaviorList, a);
+
             delayStart = a.getFloat(R.styleable.AnimatedView_delayStart, 0.0f);
             delayEnd = a.getFloat(R.styleable.AnimatedView_delayEnd, 1.0f);
             isFromTop = a.getBoolean(R.styleable.AnimatedView_isFromTop, false);
-            checkIsAnimated();
+
             String easeStr = a.getString(R.styleable.AnimatedView_ease);
             if (easeStr == null) {
                 ease = EASE_DEFAULT;
@@ -122,7 +106,6 @@ public class ViewAnimodule {
             a.recycle();
         } else {
             ease = EASE_DEFAULT;
-            isAnimated = false;
         }
 
         if (Build.VERSION.SDK_INT >= 11) {
@@ -141,13 +124,9 @@ public class ViewAnimodule {
             return;
         }
         isInited = true;
-        finalX = viewToAnimate.getLeft();
-        finalY = viewToAnimate.getTop();
-        finalAlpha = viewToAnimate.getAlpha();
-        finalZoom = viewToAnimate.getScaleX();
-        finalRotation = viewToAnimate.getRotation();
-        checkIsAnimated();
-
+        for (AnimBehavior animBehavior : animBehaviorList) {
+            animBehavior.initFinalState(viewToAnimate);
+        }
         animateInternal();
 
         if (animatingState == ANIMATING_STATE_PENDING) {
@@ -227,34 +206,13 @@ public class ViewAnimodule {
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void animateInternal() {
-        if (viewToAnimateImp != null) {
-            viewToAnimateImp.customAnimation(animateFactor);
-        }
-        if (!isAnimated || Build.VERSION.SDK_INT < 11) {
+        if (Build.VERSION.SDK_INT < 11) {
             return;
         }
 
         if (isInited) {
-            if (finalAlpha != fromAlpha) {
-                viewToAnimate.setAlpha((finalAlpha - fromAlpha) * animateFactor + fromAlpha);
-            }
-
-            if (fromX != 0f) {
-                viewToAnimate.setRight((int) (finalX + fromX - fromX * animateFactor) + viewToAnimate.getWidth());
-                viewToAnimate.setLeft((int) (finalX + fromX - fromX * animateFactor));
-            }
-
-            if (fromY != 0f) {
-                viewToAnimate.setTop((int) (finalY + fromY - fromY * animateFactor));
-            }
-
-            if ((finalZoom - 1f) != fromZoom) {
-                viewToAnimate.setScaleX(finalZoom + fromZoom - fromZoom * animateFactor);
-                viewToAnimate.setScaleY(finalZoom + fromZoom - fromZoom * animateFactor);
-            }
-
-            if (finalRotation != fromRotation) {
-                viewToAnimate.setRotation(finalRotation + fromRotation - fromRotation * animateFactor);
+            for (AnimBehavior animBehavior : animBehaviorList) {
+                animBehavior.animate(viewToAnimate, animateFactor);
             }
         }
     }
@@ -269,68 +227,21 @@ public class ViewAnimodule {
         return min;
     }
 
-    private void checkIsAnimated() {
-        isAnimated = delayStart < delayEnd
-                && (fromAlpha != finalAlpha
-                || fromX != 0f
-                || fromY != 0f
-                || fromZoom != (finalZoom - 1f)
-                || fromRotation != finalRotation);
+    public AnimBehavior addAnimBehavior(AnimBehavior animBehavior) {
+        AnimBehavior oldBehavior = removeAnimBehavior(animBehavior.getClass());
+        animBehavior.initFinalState(viewToAnimate);
+        (animBehaviorList).add(animBehavior);
+        return oldBehavior;
     }
 
-    public void setFromAlpha(float fromAlpha) {
-        this.fromAlpha = fromAlpha;
-        checkIsAnimated();
-    }
-
-    public void setDelayStart(float delayStart) {
-        this.delayStart = delayStart;
-        checkIsAnimated();
-    }
-
-    public void setDelayEnd(float delayEnd) {
-        this.delayEnd = delayEnd;
-        checkIsAnimated();
-    }
-
-    public void setFromZoom(float fromZoom) {
-        this.fromZoom = fromZoom - 1f;
-        checkIsAnimated();
-    }
-
-    public void setFromX(float fromX) {
-        this.fromX = fromX;
-        checkIsAnimated();
-    }
-
-    public void setFromY(float fromY) {
-        this.fromY = fromY;
-        checkIsAnimated();
-    }
-
-    public void setFinalAlpha(float finalAlpha) {
-        this.finalAlpha = finalAlpha;
-        checkIsAnimated();
-    }
-
-    public void setFinalRotation(float finalRotation) {
-        this.finalRotation = finalRotation;
-        checkIsAnimated();
-    }
-
-    public void setFinalX(float finalX) {
-        this.finalX = finalX;
-        checkIsAnimated();
-    }
-
-    public void setFinalY(float finalY) {
-        this.finalY = finalY;
-        checkIsAnimated();
-    }
-
-    public void setFinalZoom(float finalZoom) {
-        this.finalZoom = finalZoom;
-        checkIsAnimated();
+    public AnimBehavior removeAnimBehavior(Class<? extends AnimBehavior> classType) {
+        for (AnimBehavior animBehavior : animBehaviorList) {
+            if (animBehavior.getClass().equals(classType)) {
+                animBehaviorList.remove(animBehavior);
+                return animBehavior;
+            }
+        }
+        return null;
     }
 
     public void setEase(int ease) {

@@ -34,8 +34,4 @@ public class AnimatedVoidView extends View implements AnimatedView {
         return viewAnimodule;
     }
 
-    @Override
-    public void customAnimation(float animationFactor) {
-
-    }
 }

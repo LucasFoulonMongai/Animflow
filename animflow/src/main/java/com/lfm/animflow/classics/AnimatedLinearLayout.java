@@ -37,9 +37,4 @@ public class AnimatedLinearLayout extends LinearLayout implements AnimatedView {
     public ViewAnimodule getViewAnimodule() {
         return viewAnimodule;
     }
-
-    @Override
-    public void customAnimation(float animationFactor) {
-
-    }
 }

@@ -33,9 +33,4 @@ public class AnimatedFrameLayout extends FrameLayout implements AnimatedView {
     public ViewAnimodule getViewAnimodule() {
         return viewAnimodule;
     }
-
-    @Override
-    public void customAnimation(float animationFactor) {
-
-    }
 }

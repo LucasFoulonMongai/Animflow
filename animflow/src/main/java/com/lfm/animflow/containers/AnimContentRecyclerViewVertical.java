@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
+import com.lfm.animflow.animbehaviors.MoveYBehavior;
 import com.lfm.animflow.module.AnimatedView;
 
 /**
@@ -68,7 +69,7 @@ public class AnimContentRecyclerViewVertical extends RecyclerView {
                 progressTop = (scrollTop - currentTop) / (currentBottom - currentTop);
 
                 //Vertical move of the main child currently not supported, so better to remove them
-                ((AnimatedView) child).getViewAnimodule().setFromY(0f);
+                ((AnimatedView) child).getViewAnimodule().removeAnimBehavior(MoveYBehavior.class);
 
                 if (scrollTop == 0.001234f) {
                     ((AnimatedView) child).getViewAnimodule().launchAnimation(progressBottom, progressTop);

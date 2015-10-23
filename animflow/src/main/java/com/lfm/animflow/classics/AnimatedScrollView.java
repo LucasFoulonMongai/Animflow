@@ -34,8 +34,4 @@ public class AnimatedScrollView extends ScrollView implements AnimatedView {
         return viewAnimodule;
     }
 
-    @Override
-    public void customAnimation(float animationFactor) {
-
-    }
 }

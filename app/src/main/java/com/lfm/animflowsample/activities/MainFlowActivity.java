@@ -16,7 +16,10 @@ import com.lfm.animflowsample.fragments.FlowContent2Fragment;
 import com.lfm.animflowsample.fragments.FlowContentFragment;
 import com.lfm.animflowsample.fragments.FlowItemsFragment;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -51,7 +54,6 @@ public class MainFlowActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
         goContent(TAG_FLOW_ITEMS);
     }
 
@@ -84,11 +86,6 @@ public class MainFlowActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }

@@ -5,5 +5,4 @@ package com.lfm.animflow.module;
  */
 public interface AnimatedView {
     ViewAnimodule getViewAnimodule();
-    void customAnimation(float animationFactor);
 }

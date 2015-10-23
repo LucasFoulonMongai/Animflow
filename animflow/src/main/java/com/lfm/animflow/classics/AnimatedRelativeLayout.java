@@ -33,9 +33,4 @@ public class AnimatedRelativeLayout extends RelativeLayout implements AnimatedVi
     public ViewAnimodule getViewAnimodule() {
         return viewAnimodule;
     }
-
-    @Override
-    public void customAnimation(float animationFactor) {
-
-    }
 }
