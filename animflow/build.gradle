@@ -41,7 +41,7 @@ ext {
     siteUrl = 'https://github.com/LucasFoulonMongai/Animflow'
     gitUrl = 'https://github.com/LucasFoulonMongai/Animflow.git'
 
-    libraryVersion = '1.0.5'
+    libraryVersion = '1.1.0'
 
     developerId = 'lucasfm'
     developerName = 'Lucas Foulon-Mongai'
