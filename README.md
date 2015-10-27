@@ -34,7 +34,7 @@ The main concept is that you only have to create the final xml view you want to 
 
 The animation will be started at their first display but the magic really happen when you scroll the screen. You can also play with the animation attribute especially the isFromTop, delayStat and delayEnd which allow you to define unique behaviors.
 
-Animation attribute :
+Animation attributes :
   fromAlpha="x" ->x is a float betwen 0f and 1f, specify from what alpha value the animation will start
   
   fromX="x" -> x is a dimension (i.e: 10dp or -10sp), specify the lateral translation that the animation will execute
