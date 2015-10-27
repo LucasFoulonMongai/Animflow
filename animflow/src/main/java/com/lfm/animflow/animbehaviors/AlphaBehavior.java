@@ -24,7 +24,7 @@ public class AlphaBehavior implements AnimBehavior {
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public void animate(View viewToAnimate, float animateFactor) {
-        if (fromAlpha == finalAlpha || finalAlpha != -1 ) {
+        if (fromAlpha == finalAlpha || finalAlpha == -1f ) {
             return;
         }
         viewToAnimate.setAlpha((finalAlpha - fromAlpha) * animateFactor + fromAlpha);

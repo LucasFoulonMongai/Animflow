@@ -28,6 +28,7 @@ public class ViewAnimodule {
     public final static int ANIMATING_STATE_IDLE = 0;
     public final static int ANIMATING_STATE_PENDING = 1;
     public final static int ANIMATING_STATE_RUNNING = 2;
+    private static final AnimBehaviorBuilder DEFAULT_ANIMBEHAVIOR_BUILDER = new AnimBehaviorBuilder();
 
     private View viewToAnimate;
 
@@ -76,16 +77,28 @@ public class ViewAnimodule {
     };
 
     public ViewAnimodule(View viewToAnimate) {
-        this(viewToAnimate, null);
+        this(viewToAnimate, null, null);
+    }
+
+    public ViewAnimodule(View viewToAnimate, AnimBehaviorBuilder animBehaviorBuilder) {
+        this(viewToAnimate, null, animBehaviorBuilder);
+    }
+
+    public ViewAnimodule(View viewToAnimate, AttributeSet attrs) {
+        this(viewToAnimate, attrs, null);
+
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public ViewAnimodule(View viewToAnimate, AttributeSet attrs) {
+    public ViewAnimodule(View viewToAnimate, AttributeSet attrs, AnimBehaviorBuilder animBehaviorBuilder) {
         this.viewToAnimate = viewToAnimate;
         this.animBehaviorList = new ArrayList<>();
         if (attrs != null) {
             TypedArray a = viewToAnimate.getContext().obtainStyledAttributes(attrs, R.styleable.AnimatedView, 0, 0);
-            AnimBehaviorBuilder.build(animBehaviorList, a);
+            if (animBehaviorBuilder == null) {
+                animBehaviorBuilder = DEFAULT_ANIMBEHAVIOR_BUILDER;
+            }
+            animBehaviorBuilder.build(animBehaviorList, a);
 
             delayStart = a.getFloat(R.styleable.AnimatedView_delayStart, 0.0f);
             delayEnd = a.getFloat(R.styleable.AnimatedView_delayEnd, 1.0f);
